@@ -115,7 +115,7 @@ void ToneFilterFX::Execute(AkAudioBuffer *io_pBuffer)
 
             for (size_t i = 0; i < numSamples; ++i)
             {
-                outData[i] += tempData[i];
+                outData[i] += static_cast<AkSampleType>(tempData[i]);
             }
             AK_PLUGIN_FREE(m_pAllocator, tempData);
         }
